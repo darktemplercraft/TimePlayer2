@@ -1,0 +1,4 @@
+C:\Development\bos2013\trunk\TaskPlayer2\TaskPlayer2.Essentials.Domain\bin\Debug\TaskPlayer2.Essentials.Domain.dll
+C:\Development\bos2013\trunk\TaskPlayer2\TaskPlayer2.Essentials.Domain\bin\Debug\TaskPlayer2.Essentials.Domain.pdb
+C:\Development\bos2013\trunk\TaskPlayer2\TaskPlayer2.Essentials.Domain\obj\Debug\TaskPlayer2.Essentials.Domain.dll
+C:\Development\bos2013\trunk\TaskPlayer2\TaskPlayer2.Essentials.Domain\obj\Debug\TaskPlayer2.Essentials.Domain.pdb
