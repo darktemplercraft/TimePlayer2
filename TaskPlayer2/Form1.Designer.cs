@@ -37,15 +37,18 @@
             this.lblAddTask = new System.Windows.Forms.Label();
             this.txbAddTask = new System.Windows.Forms.TextBox();
             this.btnAddTask = new System.Windows.Forms.Button();
-            this.btnPlayStop = new System.Windows.Forms.Button();
             this.imlMyImages = new System.Windows.Forms.ImageList(this.components);
             this.tCounterPulse = new System.Windows.Forms.Timer(this.components);
             this.olvTaskGrid = new BrightIdeasSoftware.ObjectListView();
             this.olvName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvTimeSpent = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnExport = new System.Windows.Forms.Button();
+            this.btnPlayStop = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.olvTaskGrid)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -136,18 +139,6 @@
             this.btnAddTask.UseVisualStyleBackColor = false;
             this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
             // 
-            // btnPlayStop
-            // 
-            this.btnPlayStop.FlatAppearance.BorderSize = 0;
-            this.btnPlayStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlayStop.Image = global::TaskPlayer2.Properties.Resources.start;
-            this.btnPlayStop.Location = new System.Drawing.Point(25, 397);
-            this.btnPlayStop.Name = "btnPlayStop";
-            this.btnPlayStop.Size = new System.Drawing.Size(158, 141);
-            this.btnPlayStop.TabIndex = 11;
-            this.btnPlayStop.UseVisualStyleBackColor = true;
-            this.btnPlayStop.Click += new System.EventHandler(this.btnPlayStop_Click);
-            // 
             // imlMyImages
             // 
             this.imlMyImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlMyImages.ImageStream")));
@@ -201,17 +192,51 @@
             // 
             // btnExport
             // 
-            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(122)))), ((int)(((byte)(137)))));
+            this.btnExport.BackColor = System.Drawing.Color.White;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.White;
-            this.btnExport.Location = new System.Drawing.Point(585, 424);
+            this.btnExport.Image = global::TaskPlayer2.Properties.Resources.export;
+            this.btnExport.Location = new System.Drawing.Point(660, 35);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(186, 82);
+            this.btnExport.Size = new System.Drawing.Size(99, 78);
             this.btnExport.TabIndex = 12;
-            this.btnExport.Text = "Export Report";
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnPlayStop
+            // 
+            this.btnPlayStop.FlatAppearance.BorderSize = 0;
+            this.btnPlayStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayStop.Image = global::TaskPlayer2.Properties.Resources.start;
+            this.btnPlayStop.Location = new System.Drawing.Point(25, 9);
+            this.btnPlayStop.Name = "btnPlayStop";
+            this.btnPlayStop.Size = new System.Drawing.Size(140, 135);
+            this.btnPlayStop.TabIndex = 11;
+            this.btnPlayStop.UseVisualStyleBackColor = true;
+            this.btnPlayStop.Click += new System.EventHandler(this.btnPlayStop_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel2.Controls.Add(this.lblVersion);
+            this.panel2.Controls.Add(this.btnPlayStop);
+            this.panel2.Controls.Add(this.btnExport);
+            this.panel2.Location = new System.Drawing.Point(0, 397);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(794, 150);
+            this.panel2.TabIndex = 13;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersion.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblVersion.Location = new System.Drawing.Point(667, 127);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(91, 17);
+            this.lblVersion.TabIndex = 13;
+            this.lblVersion.Text = "v2.2016.02.0";
             // 
             // frmMain
             // 
@@ -219,8 +244,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(791, 550);
-            this.Controls.Add(this.btnExport);
-            this.Controls.Add(this.btnPlayStop);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnAddTask);
             this.Controls.Add(this.txbAddTask);
             this.Controls.Add(this.lblAddTask);
@@ -228,12 +252,15 @@
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.GrayText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Text = "Task Player 2";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.olvTaskGrid)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,6 +282,8 @@
         private System.Windows.Forms.ImageList imlMyImages;
         private System.Windows.Forms.Timer tCounterPulse;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblVersion;
 
     }
 }

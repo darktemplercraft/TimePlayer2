@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>taskplayer.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Cells">
       <HintPath>..\Referrence\Aspose.Cells.dll</HintPath>
@@ -86,6 +89,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Images\export.png" />
+    <Content Include="taskplayer.ico" />
     <Content Include="Templates\Report.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -29,7 +29,8 @@ namespace TaskPlayer2.Essentials.Domain.Model
 
             get
             {
-                return StoppedOn.Subtract(CreatedOn).TotalMinutes;
+                TimeSpan ts = TimeSpan.FromSeconds(TimeSpentSeconds);
+                return Math.Round(ts.TotalMinutes,2);
             }
         }
 
