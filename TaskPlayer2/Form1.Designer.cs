@@ -193,6 +193,7 @@
             // btnExport
             // 
             this.btnExport.BackColor = System.Drawing.Color.White;
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.White;
@@ -206,6 +207,7 @@
             // 
             // btnPlayStop
             // 
+            this.btnPlayStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlayStop.FlatAppearance.BorderSize = 0;
             this.btnPlayStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlayStop.Image = global::TaskPlayer2.Properties.Resources.start;
@@ -243,7 +245,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(791, 550);
+            this.ClientSize = new System.Drawing.Size(791, 546);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnAddTask);
             this.Controls.Add(this.txbAddTask);
