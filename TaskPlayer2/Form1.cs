@@ -205,7 +205,7 @@ namespace TaskPlayer2
             ExportManager em = new ExportManager();
             CalendarHelper ch = new CalendarHelper();
 
-            em.PrepareData(_TaskManager, ch.GetWeekPeriodsForMonthYear(DateTime.Today.Month, DateTime.Today.Year));
+            em.PrepareData(_TaskManager.MyTasks, ch.GetWeekPeriodsForMonthYear(DateTime.Today.Month, DateTime.Today.Year), "Exported.xlsx");
 
 
         }

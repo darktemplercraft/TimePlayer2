@@ -5,3 +5,4 @@ C:\Development\bos2013\trunk\TaskPlayer2\ObjectListView\obj\Release\BrightIdeasS
 C:\Development\bos2013\trunk\TaskPlayer2\ObjectListView\obj\Release\ObjectListView2010.csproj.GenerateResource.Cache
 C:\Development\bos2013\trunk\TaskPlayer2\ObjectListView\obj\Release\ObjectListView.dll
 C:\Development\bos2013\trunk\TaskPlayer2\ObjectListView\obj\Release\ObjectListView.pdb
+C:\Development\bos2013\trunk\TaskPlayer2\ObjectListView\obj\Release\ObjectListView2010.csprojResolveAssemblyReference.cache

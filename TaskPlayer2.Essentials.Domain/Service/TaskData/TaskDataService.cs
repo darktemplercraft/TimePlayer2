@@ -22,12 +22,12 @@ namespace TaskPlayer2.Essentials.Domain.Service.TaskData
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public List<Tasks> GetAllTask(string fileName)
+        public List<Tasks> GetAllTask(string fileName, bool createIfNotExist = true)
         {
             List<Tasks> tl = new List<Tasks>();
 
             // Read the xml file
-            var doc = _fileHandler.ReadXML(fileName, true);
+            var doc = _fileHandler.ReadXML(fileName, createIfNotExist);
             TaskResolvers tr = new TaskResolvers();
             tl = tr.ParseTaskXmlData(doc);
             return tl;

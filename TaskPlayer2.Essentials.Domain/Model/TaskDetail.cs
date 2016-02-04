@@ -34,6 +34,7 @@ namespace TaskPlayer2.Essentials.Domain.Model
             }
         }
 
+
         public double TotalTimeSpentInSeconds
         {
             get

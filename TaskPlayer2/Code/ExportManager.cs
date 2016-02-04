@@ -34,7 +34,7 @@ namespace TaskPlayer2.Code
 
         }
 
-        public void PrepareData(TaskManager taskManager, List<CalendarDayDetail> monthCalendar)
+        public void PrepareData(List<Tasks> myTasks, List<CalendarDayDetail> monthCalendar, string fileName, bool openFile = true)
         {
             DataSet ds = new DataSet("TaskPlayerReport");
 
@@ -54,7 +54,7 @@ namespace TaskPlayer2.Code
                 dt.Columns.Add("taskname", typeof(string));
 
                 DataRow dr;
-                taskManager.MyTasks.ForEach( tasks => {
+                myTasks.ForEach( tasks => {
                     dr = MappTask(dt, x, tasks);
                     if(dr != null)
                         dt.Rows.Add(dr);
@@ -88,11 +88,16 @@ namespace TaskPlayer2.Code
             _wbd.SetDataSource(ds);
             _wbd.Process();
 
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Exported.xlsx");
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
             _wbd.Workbook.Save(filePath, SaveFormat.Xlsx);
-            var excelApp = new Microsoft.Office.Interop.Excel.Application();
-            excelApp.Visible = true;
-            excelApp.Workbooks.Open(filePath);
+           
+            if (openFile)
+            {
+                var excelApp = new Microsoft.Office.Interop.Excel.Application();
+                excelApp.Visible = true;
+                excelApp.Workbooks.Open(filePath);
+            }
+            
 
             
         }
@@ -100,19 +105,24 @@ namespace TaskPlayer2.Code
         private DataRow MappTask(DataTable dt, IGrouping<int, CalendarDayDetail> weekGroup, Tasks tasks)
         {
             DataRow dr = dt.NewRow();
-
-            if (tasks.CreatedOn >= weekGroup.First().date && tasks.CreatedOn <= weekGroup.Last().date )
-            {
-                weekGroup.ToList().ForEach(x =>
-                {
-                    dr[(int)x.DayOfTheWeek] = tasks.Details.Where(t => t.StoppedOn >= x.date).ToList().Sum( t => t.TotalTimeSpentInMinutes /60);
-                });
-
-                dr[7] = tasks.Name;
-
-                return dr;
-            }
+            bool hasData = false;
             
+            weekGroup.ToList().ForEach(x =>
+            {
+                var taskDetails = tasks.Details.Where(t => t.StoppedOn.ToString("MMddyyyy") == x.date.ToString("MMddyyyy")).ToList();
+                if (taskDetails.Count() > 0)
+                    hasData = true;
+
+                var totalSeconds = taskDetails.Sum(t => t.TimeSpentSeconds);
+                TimeSpan ts = TimeSpan.FromSeconds(totalSeconds);
+                dr[(int)x.DayOfTheWeek] = Math.Round( ts.TotalMinutes /60, 2);
+            });
+
+            dr[7] = tasks.Name;
+
+            if(hasData)
+                return dr;
+                        
             return null;            
 
         }

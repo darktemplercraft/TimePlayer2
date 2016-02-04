@@ -63,5 +63,10 @@ namespace TaskPlayer2.Essentials.Domain.Util
         {
             doc.Save(fileName);
         }
+
+        public void RenameFile(string oldFileName, string newFileName)
+        {
+            File.Move(oldFileName, newFileName);
+        }
     }
 }
