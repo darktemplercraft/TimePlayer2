@@ -70,7 +70,7 @@ namespace TaskPlayer2.Essentials.Domain.Model
             get
             {
                 TimeSpan ts = TimeSpan.FromSeconds(GetTotoalSecondsTimeSpent);
-                return ts.ToString(@"hh\:mm\.ss");
+                return string.Format("{0}:{1}.{2}", (int)ts.TotalHours, ts.Minutes, ts.Seconds);
             }
         }
 
